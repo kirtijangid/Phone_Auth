@@ -10,6 +10,14 @@ class PhonePage1 extends StatefulWidget {
 class _PhonePage1State extends State<PhonePage1> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(
+        child: Column(
+          children: [
+            Text('Phone verification'),
+          ],
+        ),
+      ),
+    );
   }
 }
