@@ -23,11 +23,18 @@ class _PhonePage1State extends State<PhonePage1> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            SizedBox(height: 10,),
             Text('We need to register your phone before registration.',
             style: TextStyle(
               fontSize: 18,
             
-            ),)
+            ),
+            textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 10,),
+            ElevatedButton(
+              onPressed: (){},
+               child: Text('Send OTP'))
           ],
         ),
       ),
