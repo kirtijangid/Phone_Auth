@@ -34,12 +34,14 @@ class _PhonePage1State extends State<PhonePage1> {
               ),
               textAlign: TextAlign.center,
             ),
+            SizedBox(height: 10,),
             SizedBox(
               height: 45,
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Send OTP'),
+                child: Text('Send OTP',
+                style: TextStyle(fontSize: 17),),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
