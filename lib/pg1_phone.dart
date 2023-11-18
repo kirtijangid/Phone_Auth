@@ -8,6 +8,15 @@ class PhonePage1 extends StatefulWidget {
 }
 
 class _PhonePage1State extends State<PhonePage1> {
+  
+TextEditingController countrycode= TextEditingController();
+@override
+  void initState() {
+    // TODO: implement initState
+    countrycode.text = '+91';
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +34,6 @@ class _PhonePage1State extends State<PhonePage1> {
             SizedBox(
               height: 10,
             ),
-           
             Text(
               'Phone verification',
               style: TextStyle(
@@ -46,35 +54,36 @@ class _PhonePage1State extends State<PhonePage1> {
             SizedBox(
               height: 10,
             ),
-             Container(
+            Container(
               height: 55,
               decoration: BoxDecoration(
-                  border: Border.all(width: 1,
-                   color: Colors.grey),
-                   borderRadius: BorderRadius.circular(15),
-                   ),
+                border: Border.all(width: 1, color: Colors.grey),
+                borderRadius: BorderRadius.circular(15),
+              ),
               child: Row(
                 children: [
+                  SizedBox(width: 10),
                   SizedBox(
                     width: 40,
                     child: TextField(
+                      controller: countrycode,
                       decoration: InputDecoration(border: InputBorder.none),
                     ),
+                  ),
+                  Text(
+                    '|',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey),
                   ),
                   SizedBox(
                     width: 10,
                   ),
-                  Text('|',
-                  style: TextStyle(fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.grey),
-                  ),
-                  SizedBox(width: 10,),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Phone number'),
+                          border: InputBorder.none, hintText: 'Phone number'),
                     ),
                   )
                 ],
