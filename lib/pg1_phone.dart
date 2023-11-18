@@ -26,20 +26,26 @@ class _PhonePage1State extends State<PhonePage1> {
               height: 10,
             ),
             Container(
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 40,
-                  child: TextField(),
-                ),
-                SizedBox(width: 10,),
-                Expanded(
-                  
-                  child: TextField(),
-                )
-               
-              ],
-            ),
+              height: 55,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1,
+                   color: Colors.grey),
+                   borderRadius: BorderRadius.circular(20)
+                   ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 40,
+                    child: TextField(),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: TextField(),
+                  )
+                ],
+              ),
             ),
             Text(
               'Phone verification',
