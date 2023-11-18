@@ -12,6 +12,7 @@ class _PhonePage1State extends State<PhonePage1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        margin: EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,18 +24,29 @@ class _PhonePage1State extends State<PhonePage1> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10,),
-            Text('We need to register your phone before registration.',
-            style: TextStyle(
-              fontSize: 18,
-            
+            SizedBox(
+              height: 10,
             ),
-            textAlign: TextAlign.center,
+            Text(
+              'We need to register your phone before registration.',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10,),
-            ElevatedButton(
-              onPressed: (){},
-               child: Text('Send OTP'))
+            SizedBox(
+              height: 45,
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('Send OTP'),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  shadowColor: Colors.black54,
+                ),
+              ),
+            ),
           ],
         ),
       ),
