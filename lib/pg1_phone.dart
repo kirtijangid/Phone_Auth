@@ -30,19 +30,23 @@ class _PhonePage1State extends State<PhonePage1> {
               decoration: BoxDecoration(
                   border: Border.all(width: 1,
                    color: Colors.grey),
-                   borderRadius: BorderRadius.circular(20)
+                   borderRadius: BorderRadius.circular(15),
                    ),
               child: Row(
                 children: [
                   SizedBox(
                     width: 40,
-                    child: TextField(),
+                    child: TextField(
+                      decoration: InputDecoration(border: InputBorder.none),
+                    ),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Expanded(
-                    child: TextField(),
+                    child: TextField(
+                      decoration: InputDecoration(border: InputBorder.none),
+                    ),
                   )
                 ],
               ),
