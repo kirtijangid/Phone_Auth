@@ -25,32 +25,7 @@ class _PhonePage1State extends State<PhonePage1> {
             SizedBox(
               height: 10,
             ),
-            Container(
-              height: 55,
-              decoration: BoxDecoration(
-                  border: Border.all(width: 1,
-                   color: Colors.grey),
-                   borderRadius: BorderRadius.circular(15),
-                   ),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 40,
-                    child: TextField(
-                      decoration: InputDecoration(border: InputBorder.none),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(border: InputBorder.none),
-                    ),
-                  )
-                ],
-              ),
-            ),
+           
             Text(
               'Phone verification',
               style: TextStyle(
@@ -70,6 +45,40 @@ class _PhonePage1State extends State<PhonePage1> {
             ),
             SizedBox(
               height: 10,
+            ),
+             Container(
+              height: 55,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1,
+                   color: Colors.grey),
+                   borderRadius: BorderRadius.circular(15),
+                   ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 40,
+                    child: TextField(
+                      decoration: InputDecoration(border: InputBorder.none),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('|',
+                  style: TextStyle(fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey),
+                  ),
+                  SizedBox(width: 10,),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Phone number'),
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 45,
