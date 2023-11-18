@@ -52,7 +52,7 @@ TextEditingController countrycode= TextEditingController();
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 10,
+              height: 30,
             ),
             Container(
               height: 55,
@@ -89,6 +89,7 @@ TextEditingController countrycode= TextEditingController();
                 ],
               ),
             ),
+            SizedBox(height: 20,),
             SizedBox(
               height: 45,
               width: double.infinity,
