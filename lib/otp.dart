@@ -12,32 +12,42 @@ class _OTPState extends State<OTP> {
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
-  width: 56,
-  height: 56,
-  textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
-  decoration: BoxDecoration(
-    border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
-    borderRadius: BorderRadius.circular(20),
-  ),
-);
-
-final focusedPinTheme = defaultPinTheme.copyDecorationWith(
-  border: Border.all(color: Color.fromRGBO(114, 178, 238, 1)),
-  borderRadius: BorderRadius.circular(8),
-);
-
-final submittedPinTheme = defaultPinTheme.copyWith(
-  decoration: defaultPinTheme.decoration?.copyWith(
-    color: Color.fromRGBO(234, 239, 243, 1),
-  ),
-);
-    return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: Icon(
-        Icons.arrow_back_ios_new_rounded,
-        color: Colors.black,
+      width: 56,
+      height: 56,
+      textStyle: TextStyle(
+          fontSize: 20,
+          color: Color.fromRGBO(30, 60, 87, 1),
+          fontWeight: FontWeight.w600),
+      decoration: BoxDecoration(
+        border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
+        borderRadius: BorderRadius.circular(20),
       ),
+    );
+
+    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
+      border: Border.all(color: Color.fromRGBO(114, 178, 238, 1)),
+      borderRadius: BorderRadius.circular(8),
+    );
+
+    final submittedPinTheme = defaultPinTheme.copyWith(
+      decoration: defaultPinTheme.decoration?.copyWith(
+        color: Color.fromRGBO(234, 239, 243, 1),
+      ),
+    );
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: Container(
         margin: EdgeInsets.only(left: 25, right: 25),
@@ -73,17 +83,17 @@ final submittedPinTheme = defaultPinTheme.copyWith(
             SizedBox(
               height: 30,
             ),
-             Pinput(
-  // defaultPinTheme: defaultPinTheme,
-  // focusedPinTheme: focusedPinTheme,
-  // submittedPinTheme: submittedPinTheme,
-  validator: (s) {
-    return s == '2222' ? null : 'Pin is incorrect';
-  },
-  pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-  showCursor: true,
-  onCompleted: (pin) => print(pin),
-),
+            Pinput(
+              // defaultPinTheme: defaultPinTheme,
+              // focusedPinTheme: focusedPinTheme,
+              // submittedPinTheme: submittedPinTheme,
+              validator: (s) {
+                return s == '2222' ? null : 'Pin is incorrect';
+              },
+              pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+              showCursor: true,
+              onCompleted: (pin) => print(pin),
+            ),
             SizedBox(
               height: 20,
             ),
@@ -104,18 +114,22 @@ final submittedPinTheme = defaultPinTheme.copyWith(
               ),
             ),
             Row(
-            children: [TextButton(
-              onPressed: () {},
-              child: Text(
-                'Edit Phone Number?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, 'phone', (route) => false);
+                  },
+                  child: Text(
+                    'Edit Phone Number?',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
-          ),
           ],
         ),
       ),
