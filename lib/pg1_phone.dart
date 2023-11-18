@@ -12,9 +12,22 @@ class _PhonePage1State extends State<PhonePage1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        alignment: Alignment.center,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Phone verification'),
+            Text(
+              'Phone verification',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text('We need to register your phone before registration.',
+            style: TextStyle(
+              fontSize: 18,
+            
+            ),)
           ],
         ),
       ),
