@@ -33,7 +33,11 @@ final submittedPinTheme = defaultPinTheme.copyWith(
 );
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent,
-
+      elevation: 0,
+      leading: Icon(
+        Icons.arrow_back_ios_new_rounded,
+        color: Colors.black,
+      ),
       ),
       body: Container(
         margin: EdgeInsets.only(left: 25, right: 25),
