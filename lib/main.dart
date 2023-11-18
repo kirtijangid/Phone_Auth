@@ -6,8 +6,8 @@ void main() {
   runApp( MaterialApp(
    initialRoute: 'phone',
     routes: {
-      'phone': (context) => const PhonePage1(),
-      'otp': (context) => const OTP(),
+      'phone': (context) =>  PhonePage1(),
+      'otp': (context) =>  OTP(),
      
     },
   ));

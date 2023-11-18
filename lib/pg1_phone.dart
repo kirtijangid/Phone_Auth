@@ -8,9 +8,8 @@ class PhonePage1 extends StatefulWidget {
 }
 
 class _PhonePage1State extends State<PhonePage1> {
-  
-TextEditingController countrycode= TextEditingController();
-@override
+  TextEditingController countrycode = TextEditingController();
+  @override
   void initState() {
     // TODO: implement initState
     countrycode.text = '+91';
@@ -89,12 +88,16 @@ TextEditingController countrycode= TextEditingController();
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             SizedBox(
               height: 45,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.popAndPushNamed(context, 'otp');
+                },
                 child: Text(
                   'Send OTP',
                   style: TextStyle(fontSize: 16),
