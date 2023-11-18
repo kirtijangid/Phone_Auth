@@ -8,8 +8,6 @@ class OTP extends StatefulWidget {
 }
 
 class _OTPState extends State<OTP> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +45,9 @@ class _OTPState extends State<OTP> {
             SizedBox(
               height: 30,
             ),
-            
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             SizedBox(
               height: 45,
               width: double.infinity,
@@ -65,10 +64,19 @@ class _OTPState extends State<OTP> {
                 ),
               ),
             ),
-            TextButton(
+            Row(
+            children: [TextButton(
               onPressed: () {},
-               child: Text('Edit Phone Number?',
-               style: TextStyle(color: Colors.blue),))
+              child: Text(
+                'Edit Phone Number?',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+            ),
+          ],
+          ),
           ],
         ),
       ),
