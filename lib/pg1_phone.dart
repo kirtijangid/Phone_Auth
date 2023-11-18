@@ -17,6 +17,7 @@ class _PhonePage1State extends State<PhonePage1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('assets/auth_otp.png'),
             Text(
               'Phone verification',
               style: TextStyle(
@@ -41,7 +42,7 @@ class _PhonePage1State extends State<PhonePage1> {
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text('Send OTP',
-                style: TextStyle(fontSize: 17),),
+                style: TextStyle(fontSize: 1),),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
