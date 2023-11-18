@@ -47,41 +47,7 @@ class _OTPState extends State<OTP> {
             SizedBox(
               height: 30,
             ),
-            Container(
-              height: 55,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Colors.grey),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: 10),
-                  SizedBox(
-                    width: 40,
-                    child: TextField(
-                     
-                      decoration: InputDecoration(border: InputBorder.none),
-                    ),
-                  ),
-                  Text(
-                    '|',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Phone number'),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            
             SizedBox(height: 20,),
             SizedBox(
               height: 45,
@@ -99,6 +65,10 @@ class _OTPState extends State<OTP> {
                 ),
               ),
             ),
+            TextButton(
+              onPressed: () {},
+               child: Text('Edit Phone Number?',
+               style: TextStyle(color: Colors.blue),))
           ],
         ),
       ),
