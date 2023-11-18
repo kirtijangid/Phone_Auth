@@ -17,10 +17,30 @@ class _PhonePage1State extends State<PhonePage1> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/auth_otp.png',
-            width: 180,
-            height: 180,),
-            SizedBox(height: 10,),
+            Image.asset(
+              'assets/auth_otp.png',
+              width: 180,
+              height: 180,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 40,
+                  child: TextField(),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                  
+                  child: TextField(),
+                )
+               
+              ],
+            ),
+            ),
             Text(
               'Phone verification',
               style: TextStyle(
@@ -38,14 +58,18 @@ class _PhonePage1State extends State<PhonePage1> {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             SizedBox(
               height: 45,
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Send OTP',
-                style: TextStyle(fontSize: 16),),
+                child: Text(
+                  'Send OTP',
+                  style: TextStyle(fontSize: 16),
+                ),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
