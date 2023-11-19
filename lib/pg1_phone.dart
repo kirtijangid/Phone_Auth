@@ -96,7 +96,7 @@ class _PhonePage1State extends State<PhonePage1> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, 'otp');
+                  Navigator.pushNamed(context, 'otp');
                 },
                 child: Text(
                   'Send OTP',
