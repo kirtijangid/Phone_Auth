@@ -10,6 +10,7 @@ class PhonePage1 extends StatefulWidget {
 
 class _PhonePage1State extends State<PhonePage1> {
   TextEditingController countrycode = TextEditingController();
+  var phone = "";
   @override
   void initState() {
     // TODO: implement initState
@@ -82,6 +83,10 @@ class _PhonePage1State extends State<PhonePage1> {
                   ),
                   Expanded(
                     child: TextField(
+                      keyboardType: TextInputType.phone,
+                      onChanged: (value) {
+                        phone = value;
+                      },
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Phone number'),
                     ),
@@ -97,13 +102,13 @@ class _PhonePage1State extends State<PhonePage1> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () async {
-                  await FirebaseAuth.instance.verifyPhoneNumber(
-                    phoneNumber: '+44 7123 123 456',
-                    verificationCompleted: (PhoneAuthCredential credential) {},
-                    verificationFailed: (FirebaseAuthException e) {},
-                    codeSent: (String verificationId, int? resendToken) {},
-                    codeAutoRetrievalTimeout: (String verificationId) {},
-                  );
+                  // await FirebaseAuth.instance.verifyPhoneNumber(
+                  //   phoneNumber: '+44 7123 123 456',
+                  //   verificationCompleted: (PhoneAuthCredential credential) {},
+                  //   verificationFailed: (FirebaseAuthException e) {},
+                  //   codeSent: (String verificationId, int? resendToken) {},
+                  //   codeAutoRetrievalTimeout: (String verificationId) {},
+                  // );
                   Navigator.pushNamed(context, 'otp');
                 },
                 child: Text(
