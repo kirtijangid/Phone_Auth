@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class PhonePage1 extends StatefulWidget {
   const PhonePage1({super.key});
 
+  static String verify = "";
+
   @override
   State<PhonePage1> createState() => _PhonePage1State();
 }
@@ -102,14 +104,17 @@ class _PhonePage1State extends State<PhonePage1> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () async {
-                  // await FirebaseAuth.instance.verifyPhoneNumber(
-                  //   phoneNumber: '+44 7123 123 456',
-                  //   verificationCompleted: (PhoneAuthCredential credential) {},
-                  //   verificationFailed: (FirebaseAuthException e) {},
-                  //   codeSent: (String verificationId, int? resendToken) {},
-                  //   codeAutoRetrievalTimeout: (String verificationId) {},
-                  // );
-                  Navigator.pushNamed(context, 'otp');
+                  await FirebaseAuth.instance.verifyPhoneNumber(
+                    phoneNumber: '${countrycode.text + phone}',
+                    verificationCompleted: (PhoneAuthCredential credential) {},
+                    verificationFailed: (FirebaseAuthException e) {},
+                    codeSent: (String verificationId, int? resendToken) {
+                      PhonePage1.verify = verificationId;
+                      Navigator.pushNamed(context, 'otp');
+                    },
+                    codeAutoRetrievalTimeout: (String verificationId) {},
+                  );
+                  //Navigator.pushNamed(context, 'otp');
                 },
                 child: Text(
                   'Send OTP',

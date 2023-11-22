@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 import 'package:phone_auth/firebase_options.dart';
+import 'package:phone_auth/home.dart';
 import 'package:phone_auth/otp.dart';
 import 'package:phone_auth/pg1_phone.dart';
 
@@ -38,10 +39,12 @@ class MyApp extends StatelessWidget {
     //  theme: ThemeData(
     //    primarySwatch: Colors.blue,
     //  ),
+    
      initialRoute: 'phone',
     routes: {
       'phone': (context) =>  PhonePage1(),
       'otp': (context) =>  OTP(),
+      'home':(context) => MyHome()
      
     },
      

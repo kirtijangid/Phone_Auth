@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:phone_auth/pg1_phone.dart';
 import 'package:pinput/pinput.dart';
 
 class OTP extends StatefulWidget {
@@ -9,6 +11,7 @@ class OTP extends StatefulWidget {
 }
 
 class _OTPState extends State<OTP> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -34,6 +37,9 @@ class _OTPState extends State<OTP> {
         color: Color.fromRGBO(234, 239, 243, 1),
       ),
     );
+
+    var code = "";
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -92,6 +98,10 @@ class _OTPState extends State<OTP> {
               },
               pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
               showCursor: true,
+              length: 6,
+              onChanged: (value) {
+                code = value;
+              },
               onCompleted: (pin) => print(pin),
             ),
             SizedBox(
@@ -101,7 +111,18 @@ class _OTPState extends State<OTP> {
               height: 45,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  try {
+                    PhoneAuthCredential credential =
+                        PhoneAuthProvider.credential(
+                            verificationId: PhonePage1.verify, smsCode: code);
+
+                    // Sign the user in (or link) with the credential
+                    await auth.signInWithCredential(credential);
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, "home", (route) => false);
+                  } catch (e) {}
+                },
                 child: Text(
                   'Verify Phone number ',
                   style: TextStyle(fontSize: 16),
